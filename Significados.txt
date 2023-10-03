@@ -1,0 +1,7 @@
+Model (pasta) = Representações das Tabelas na Api
+
+Repository (interfaces) = Operações que aquela Tabela pode realizar no DB, ela que define os comandos já pré determinados pela biblioteca
+
+Infraestrutura (pasta) = Contexto onde é feita por exemplo conexão de banco de dados
+
+ViewModel = classe responsal para preparar os dados a serem enviados
