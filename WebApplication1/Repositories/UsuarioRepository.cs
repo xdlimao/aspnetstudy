@@ -1,5 +1,6 @@
-﻿using WebApplication1.Interfaces;
-using WebApplication1.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication1.Interfaces;
+using WebApplication1.Models;
 
 namespace WebApplication1.Repositories
 {
@@ -14,7 +15,17 @@ namespace WebApplication1.Repositories
 
         public void Incluir(Usuario usuario)
         {
-            
+            _context.Usuario.Add(usuario);
+        }
+
+        public async Task<bool> SaveAllAsync()
+        {
+            return await _context.SaveChangesAsync() > 0;    
+        }
+
+        public async Task<IEnumerable<Usuario>> SelecionarTodos()
+        {
+            return await _context.Usuario.ToListAsync();
         }
     }
 }

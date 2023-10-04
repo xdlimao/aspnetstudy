@@ -8,4 +8,8 @@ name varchar(255),
 age int
 )
 
+select *from Usuario
+
+insert into Usuario values (1, 'peralta', 3)
+
 drop table Usuario
