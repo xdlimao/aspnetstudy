@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var configuration = new ConfigurationBuilder()
     .SetBasePath(builder.Environment.ContentRootPath)
     .AddJsonFile("appsettings.json")
-    .Build();
+    .Build(); //isso aqui é pra ler o json, meu deus, o bagulho cria nativo no projeto, pq eu tenho ler denovo
 
 // Add services to the container.
 
