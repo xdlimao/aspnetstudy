@@ -5,7 +5,7 @@ using WebApplication1.Repositories;
 
 namespace WebApplication1.Controllers
 {
-    [ApiController]
+    [ApiController] //Ja transformar em JSON!
     [Route("/api/")]
     public class UsuarioController : Controller
     {
@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             _usuarioRepository = usuarioRepository; //define o repository que vier aqui para este controller
         }
 
-        [HttpGet]
+        [HttpGet] //Task<ActioResult> é para receber o método Ok ou BadRequest, ele é sempre async e tem que ter um await, olhar o outro projeto
         public async Task<ActionResult<IEnumerable<Usuario>>> GetClientes()
         {
             return Ok(await _usuarioRepository.SelecionarTodos());
